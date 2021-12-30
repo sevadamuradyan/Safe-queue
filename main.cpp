@@ -110,7 +110,7 @@ int main()
         std::cerr << "Queue is closing.\n";
     }
     queue.close();
-// Wait for consumers.
+
     {
         std::lock_guard<std::mutex> lock(_Mutex);
         std::cerr << "Waiting ...\n";
