@@ -107,13 +107,13 @@ int main()
         t.join();
     {
         std::lock_guard<std::mutex> lock(_Mutex);
-        std::cerr << "Queue is closing.\n";
+        std::cout << "Queue is closing.\n";
     }
     queue.close();
 
     {
         std::lock_guard<std::mutex> lock(_Mutex);
-        std::cerr << "Waiting ...\n";
+        std::cout << "Waiting ...\n";
     }
     for (auto & t : consumers)
         t.join();
